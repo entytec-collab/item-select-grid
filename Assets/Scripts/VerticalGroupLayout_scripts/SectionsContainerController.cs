@@ -18,6 +18,8 @@ public class SectionsContainerController : MonoBehaviour
 
     [Header("Grid config")]
     [SerializeField] private int columns = 4;
+    [Tooltip("Change tab when it reaches complete top on 0, add tolerance to change before reaching full top")]
+    [SerializeField] private float tabChangeTolerance = 1;
 
     public UnityEvent<ItemData> OnItemSelected = new UnityEvent<ItemData>();
 
@@ -161,12 +163,16 @@ public class SectionsContainerController : MonoBehaviour
         {
             var r = _sectionRanges[i];
             // Si la parte superior de la sección está en la ventana o es la más cercana por encima
-            if (r.topY >= viewportTop && r.topY <= viewportBottom)
+            if (r.topY <= viewportTop + tabChangeTolerance)
             {
                 active = r.categoryId;
-                break;
             }
-            if (r.topY < viewportTop) active = r.categoryId; // la última que quedó por encima
+            else
+            {
+                break;
+
+            }
+            //if (r.topY < viewportTop) active = r.categoryId; // la última que quedó por encima
         }
 
         if (!string.IsNullOrEmpty(active))
