@@ -1,0 +1,38 @@
+20251106 01:30
+4 hrs:
+ - 1er Draft de diagrama de funcionamiento e integración
+ - Comienzo de refactoring del código
+ - SO carga categorías e ítemes al menú
+ - Versión con tabs horizontales y verticales
+ 
+
+Pendiente:
+ - Completar refactoring del código
+ - Prueba y feedback de usuario
+ -Validación del método de integración 
+ - Autoasignar número de columnas según el espacio en el scrollview
+
+20251104 17:00
+- Ayer tuve tres horas de trabajo:
+- Benchmark de soluciones similares
+- Comienzo a idear el diagrama de diseño del componente
+- Comienzo a hacer pruebas con los posibles elementos a utilizar
+- Clono el repositorio localmente
+
+Esta noche trabajo 3 horas más:
+- versión 1 del borrador de diagrama de diseño
+- hago Prueba conceptual del funcionamiento de los principales elementos del componente
+
+Requerimientos:
+- Necesito la versión de Unity que estamos usando para el resto del proyecto.
+
+20251105 11:15
+3 horas:
+- Prueba conceptual funcionando con y sin labels entre el grid.
+  a) GridLayout
+  b) Sections w VerticalGroupLayouts
+
+Pendiente:
+ - Diagrama de funcionamiento e integración
+ - Refactor según el diagrama de diseño e integración
+ 

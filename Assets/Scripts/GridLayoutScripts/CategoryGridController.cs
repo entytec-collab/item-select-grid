@@ -98,7 +98,7 @@ public class CategoryGridController : MonoBehaviour
             // Aquí mantenemos grid plano: títulos no se recomiendan en esta variante.
 
             // Instanciar ítems de la categoría
-            for (int i = 0; i < cat.items.Length; i++)
+            for (int i = 0; i < cat.items.Count; i++)
             {
                 var cell = Instantiate(itemCellPrefab, content);
                 cell.Bind(cat.items[i]);
@@ -149,7 +149,7 @@ public class CategoryGridController : MonoBehaviour
             tabModels.Add(new CategoryTabModel
             {
                 categoryId = cat.id,
-                displayName = cat.nombre,
+                displayName = cat.categoryName,
                 startIndex = range.startIndexInclusive
             });
         }

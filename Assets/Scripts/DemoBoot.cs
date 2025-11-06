@@ -4,7 +4,7 @@ using UnityEngine;
 public class DemoBoot : MonoBehaviour
 {
     [SerializeField] private CategoryGridController gridCtrl;
-    [SerializeField] private Sprite sampleSprite;
+    [SerializeField] private GameObject samplePrefab;
     [SerializeField] private int columns;
 
     private void Start()
@@ -12,15 +12,15 @@ public class DemoBoot : MonoBehaviour
         var cats = new List<CategoryData>
         {
             new CategoryData {
-                id = "camisas", nombre = "Camisas",
+                id = "camisas", categoryName = "Camisas",
                 items = MakeItems("C", 7)
             },
             new CategoryData {
-                id = "pantalones", nombre = "Pantalones",
+                id = "pantalones", categoryName = "Pantalones",
                 items = MakeItems("P", 10)
             },
             new CategoryData {
-                id = "accesorios", nombre = "Accesorios",
+                id = "accesorios", categoryName = "Accesorios",
                 items = MakeItems("A", 4)
             }
         };
@@ -29,24 +29,23 @@ public class DemoBoot : MonoBehaviour
         gridCtrl.SetData(cats, columns);
     }
 
-    private ItemData[] MakeItems(string prefix, int count)
+    private List<ItemData> MakeItems(string prefix, int count)
     {
-        var arr = new ItemData[count];
+        var list = new List<ItemData>();
         for (int i = 0; i < count; i++)
         {
-            arr[i] = new ItemData
+            list[i] = new ItemData
             {
                 id = $"{prefix}_{i}",
-                nombre = $"{prefix} {i}",
-                thumbnail = sampleSprite,
-                metadataJson = "{}"
+                itemName = $"{prefix} {i}",
+                thumbnail = samplePrefab,
             };
         }
-        return arr;
+        return list;
     }
 
     private void OnItemSelected(ItemData item)
     {
-        Debug.Log($"Seleccionado: {item.id} - {item.nombre}");
+        Debug.Log($"Seleccionado: {item.id} - {item.itemName}");
     }
 }

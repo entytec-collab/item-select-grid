@@ -18,8 +18,9 @@ public class SectionsContainerController : MonoBehaviour
 
     [Header("Grid config")]
     [SerializeField] private int columns = 4;
+    [SerializeField] GridLayoutGroup gridLayout;
     [Tooltip("Change tab when it reaches complete top on 0, add tolerance to change before reaching full top")]
-    [SerializeField] private float tabChangeTolerance = 1;
+    [SerializeField] private float tabChangeTolerance = 20;
 
     public UnityEvent<ItemData> OnItemSelected = new UnityEvent<ItemData>();
 
@@ -47,12 +48,14 @@ public class SectionsContainerController : MonoBehaviour
     public void SetData(List<CategoryData> data, int columnCount)
     {
         categories = data ?? new List<CategoryData>();
+
         columns = Mathf.Max(1, columnCount);
 
         RebuildSections();
         BuildTabs();
         ComputeSectionRanges();
     }
+    
 
     private void RebuildSections()
     {
@@ -63,6 +66,7 @@ public class SectionsContainerController : MonoBehaviour
             var section = Instantiate(sectionPrefab, content);
             section.Build(cat, columns);
             section.OnItemSelected.AddListener(OnItemSelected.Invoke);
+            section.name = cat.categoryName;
             _sections.Add(section);
         }
 

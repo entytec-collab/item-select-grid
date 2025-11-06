@@ -27,7 +27,7 @@ public class CategorySectionView : MonoBehaviour
     {
         CategoryId = data.id;
         columns = Mathf.Max(1, columnCount);
-        if (titleText) titleText.text = data.nombre;
+        if (titleText) titleText.text = data.categoryName;
 
         grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
         grid.constraintCount = columns;
@@ -45,7 +45,18 @@ public class CategorySectionView : MonoBehaviour
         // Si el grid o el Content usan auto layout, fuerza un rebuild para que la altura preferida se calcule.
         LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
     }
+    public int GetColumnCount()
+    {
+        ScrollRect _scrollRect = GetComponentInParent<ScrollRect>();
+        float scrollWidth = _scrollRect.viewport.rect.width;
+        float cellWidth = grid.cellSize.x;
+        float spacing = grid.spacing.x;
 
+        // Calculate how many cells fit
+        int columns = Mathf.FloorToInt((scrollWidth + spacing) / (cellWidth + spacing));
+        Debug.Log($"Scrollrect: {_scrollRect.name} [CategorySectionView] Calculated columns: {columns} (scrollWidth: {scrollWidth}, cellWidth: {cellWidth}, spacing: {spacing})");
+        return Mathf.Max(columns, 1); // at least 1 column
+    }
     private void HandleItemClicked(ItemData item) => OnItemSelected.Invoke(item);
 
     public void Clear()

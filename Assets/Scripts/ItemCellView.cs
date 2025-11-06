@@ -4,22 +4,7 @@ using UnityEngine.Events;
 using TMPro;
 
 
-[System.Serializable]
-public class ItemData
-{
-    public string id;
-    public string nombre;
-    public Sprite thumbnail; // o referencia a prefab si usas 3D, cambia a GameObject si aplica
-    public string metadataJson; // opcional: puedes estructurar mejor si lo necesitas
-}
 
-[System.Serializable]
-public class CategoryData
-{
-    public string id;
-    public string nombre;
-    public ItemData[] items;
-}
 
 
 public class ItemCellView : MonoBehaviour
@@ -35,8 +20,8 @@ public class ItemCellView : MonoBehaviour
     public void Bind(ItemData data)
     {
         _data = data;
-        if (thumbnailImage) thumbnailImage.sprite = data.thumbnail;
-        if (nameText) nameText.text = data.nombre;
+        if (thumbnailImage) thumbnailImage.sprite = data.thumbnail.GetComponent<SpriteRenderer>().sprite;
+        if (nameText) nameText.text = data.itemName;
     }
 
     private void Awake()
