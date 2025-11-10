@@ -3,10 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-
-
-
-
 public class ItemCellView : MonoBehaviour
 {
     [SerializeField] private Image thumbnailImage;
