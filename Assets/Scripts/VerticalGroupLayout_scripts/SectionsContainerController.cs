@@ -34,29 +34,22 @@ public class SectionsContainerController : MonoBehaviour
     {
         _scrollRect = GetComponent<ScrollRect>();
     }
-
     private void OnEnable()
     {
         _scrollRect.onValueChanged.AddListener(OnScrollChanged);
     }
-
     private void OnDisable()
     {
         _scrollRect.onValueChanged.RemoveListener(OnScrollChanged);
     }
-
     public void SetData(List<CategoryData> data, int columnCount)
     {
         categories = data ?? new List<CategoryData>();
-
         columns = Mathf.Max(1, columnCount);
-
         RebuildSections();
         BuildTabs();
         ComputeSectionRanges();
     }
-    
-
     private void RebuildSections()
     {
         ClearSections();
@@ -182,4 +175,5 @@ public class SectionsContainerController : MonoBehaviour
         if (!string.IsNullOrEmpty(active))
             tabsController.SetActiveByCategoryId(active);
     }
+
 }

@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 219121182}
   - component: {fileID: 219121183}
   m_Layer: 0
-  m_Name: DemoBootSections
+  m_Name: TabsUIInitializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,8 +426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DemoBootSections
   sectionsController: {fileID: 1770771263}
-  samplePrefab: {fileID: 3217349359726974008, guid: ec52e95e10a1f8e459fce6d3cba08360, type: 3}
   categoriesScriptableObject: {fileID: 11400000, guid: 5d06d1637253d274e861f2b7cda5c265, type: 2}
+  columnsNumber: 3
+  samplePrefab: {fileID: 3217349359726974008, guid: ec52e95e10a1f8e459fce6d3cba08360, type: 3}
 --- !u!1 &227314662
 GameObject:
   m_ObjectHideFlags: 0

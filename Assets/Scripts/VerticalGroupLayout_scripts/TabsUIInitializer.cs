@@ -15,7 +15,7 @@ public class TabsUIInitializer : MonoBehaviour
         sectionsController.OnItemSelected.AddListener(OnItemSelected); // Object selection subscription demo       
     }
 
-    // Object selection subscription demo
+    // DEMO: Object selection subscription
     private void OnItemSelected(ItemData item)
     {
         //Code to execute on item selection
