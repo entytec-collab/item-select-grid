@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1d0dd303c7f5044a2d298c6aec3e7c, type: 3}
+  m_Name: Colored_BlueShirt
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemID: 0
+  itemName: Camisa Azul
+  itemIcon: {fileID: 0}
+  itemGameObject: {fileID: 7252708191781242917, guid: fe37e1b2c12cc4c4cad4502460bb0cbf, type: 3}
+  category: {fileID: 11400000, guid: 3d38740be6690384cb538d3a1bf2463b, type: 2}

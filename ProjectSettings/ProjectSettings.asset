@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 4590e66995aef5749971d10a927c5657
+  productGUID: 6b4c40cd8db33434ab8be0ca32cc3e7d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: item-select-grid
+  productName: tabs-item-selector-2
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -693,14 +693,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: item-select-grid
+  metroPackageName: tabs-item-selector-2
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: item-select-grid
+  metroApplicationDescription: tabs-item-selector-2
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -771,10 +771,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: c02b0f36-0a20-4244-b467-bd8636feb92f
+  cloudProjectId: 2c9152a8-475e-463f-aeff-cc6e12447cfb
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: item-select-grid
+  projectName: tabs-item-selector-2
   organizationId: rafaelfdz90
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
@@ -785,4 +785,3 @@ PlayerSettings:
   androidVulkanDenyFilterList: []
   androidVulkanAllowFilterList: []
   androidVulkanDeviceFilterListAsset: {fileID: 0}
-  d3d12DeviceFilterListAsset: {fileID: 0}

@@ -1,0 +1,78 @@
+Hi! I'm rafamaster3 and I built this component with plenty of love (and time) so everyone can make better games. Please contact me through GitHub for any help! Also share this code and give a mention on the credits to your game to help others!
+
+Have a great coding session ;)
+
+-------------------------------
+
+Functions:
+- Automatically populate items and tabs with your items and categories
+- Navigate items clicking on tabs or use them as filters for easier search!!
+- Add many labels and interactions to your items, like price label, more info button, select as many as you want as buttons or use toggles for a unique selection per category
+- Adjust everything from just 3 objects: Tab Selector Manager, Item prefab, Tab Prefab
+
+-------------------------------
+
+Setup instructions:
+
+Running the code:
+
+- To launch the UI Call public method TabsItemSelectorManager.CreateTabsItemSelector()
+- To add functionality to items or tabs use the API's marked section in ItemBuilder and TabBuilder scripts
+
+Inspector setup:
+- Use samples as guide to add all necessary game objects and components 
+- Create item prefab, tab prefab and section prefab following your needs, use sample prefabs as guide
+  -- Section prefab must have the GridLayoutGroup and the ToggleGroup component you want to use in its child "ItemsGroupLayout"
+  -- You can include a header or other objects (such as lines or designs) as children of the section prefab
+    --- A header game object with a TextMeshProUGUI component is mandatory if you want headers for your sections
+- Assign references in:
+  -- TabsItemSelectorManager component in the main GameObject
+  -- UIBuilder component in the main GameObject
+  -- TabsController component in the TabsScrollView GameObject that contains the viewPort and content
+  -- SectionsController component in the ItemsScrollView GameObject that contains the viewPort and content
+  -- TabBuilder component in the Tab prefab
+  -- ItemBuilder component in the Item prefab
+
+Creating and loading items and categories:
+- Create categories and items ScriptableObjects using the CreateAssetMenu option in CategorySO and ItemSO scripts
+- *** Important: Assign unique names to each category
+- *** Important: Assign a category to each item
+- Add items and categories separately to the TabsItemSelectorManager component in the main GameObject
+- Tip: create your own script to load items and categories dynamically if you want
+
+
+tabs:
+- Tabs prefabs must have buttons (used to navigate or add personalized actions) or toggles (used as filters and navigation or add personalized actions) 
+  -- The active section and selected tab color or image is pulled from button/toggle colors and image
+     --- Configure your color/toggle colors according to your needs. Use samples as guide
+- You can also set the color change or image swap to indicate the active tab directly from the TabSelectorManager (see Adjusments section below)
+- Tip: when setting toggles/buttons make sure the color and alpha is the same for the image color, normal, selected and pressed colors to avoid flickering when switching between active categories
+
+Items:
+- Items prefabs must have button or toggle component to handle clicks
+- Configure selected item color/Image from the prefab: You can use button/Toggle transition colors or image swap to show selected/unselected state
+  -- For color change when selected: Assign the item prefab icon gameObject with an Image component to toggle/button target graphics and choose the color transition in the button/toggle options
+     -- For Toggles you can add another GaemObject with Image component as background to change color when selected, define the color on this Image component
+  -- For Image Swap when selected: 
+      --- Assign the item prefab icon gameObject with an Image component to toggle/button target graphics and choose the Sprite swap transition in the button/toggle options
+      --- Modify Item Script to add a second Sprite reference for selected state and assign it in the ItemBuilder component
+      --- Modify the ItemBuilder.LoadItemPrefab to assign the corresponding images for normal and selected states for button or toggle components
+- To add more than one label, icon, button or toggle for each item Example: add price label, rarity icon, more info button, etc: 
+    -- Extend ItemBuilder script with multiple label/icon references
+    -- Modify AssignItemIcons or AssignItemLabels methods. 
+- To add click events to items, add listeners to ItemBuilder.onClick event. 
+  -- You can use ItemBuilder HandleClick, SetButtonActions or SetToggleActions methods to modify behavior of button/toggle components
+
+------------------------------------------
+
+Adjustments instructions:
+TabManager:
+- Use Swap Image When Selected to change the tab image when active/inactive (you can also do this from the button/toggle option of the prefab). In that case, assign the selected and unselected images
+- ForceColors to set button/toggle colors on tabs directly from TabManager settings
+- TabChangeTolerance: To adjust how far from the top (or the side) a category is consider to be active
+- We don't recommend changing the  Oriented Layout Group settings for sections unless you know what you are doing
+- To make all tabs fit in your viewport select Tabs Child Force Expand Width and Tab child Control Width
+  -- If you want tabs in the original size overflowing the viewport disable these options, you can scroll through the tabs 
+- You can add the Items Grid Layout settings directly from the manager or you can use the GridLayoutGroup component in your section prefab's child
+- Optionally, you can assign indicators to show/hide when you can scroll more to the left or right in the tabs scroll view letting your players know there's more to see if they scroll
+----------------------------------------------------
