@@ -153,6 +153,9 @@ public class SectionsContainerController : MonoBehaviour
         var viewport = _scrollRect.viewport ? _scrollRect.viewport : (RectTransform)content.parent;
         float viewportTop = currentY;
         float viewportBottom = currentY + viewport.rect.height;
+        var topPadding = content.GetComponent<VerticalLayoutGroup>()?.padding.top;
+        var bottomPadding = content.GetComponent<VerticalLayoutGroup>()?.padding.bottom;
+        var spacing = content.GetComponent<VerticalLayoutGroup>()?.spacing ?? 0f;
 
         // Categoría activa: la sección cuyo top esté dentro o justo por encima del viewport
         string active = null;
@@ -160,7 +163,7 @@ public class SectionsContainerController : MonoBehaviour
         {
             var r = _sectionRanges[i];
             // Si la parte superior de la sección está en la ventana o es la más cercana por encima
-            if (r.topY <= viewportTop + tabChangeTolerance)
+            if (r.topY <= viewportTop + tabChangeTolerance + topPadding + bottomPadding + spacing)
             {
                 active = r.categoryId;
             }

@@ -3,10 +3,27 @@ Pendientes:
 - crear bool categoriesHaveTitles -> Hide CategorySectionView Header in code and substract Header height from the ChangeTabTolerance 
 
 - Items deben ser toogle buttons
+	- Use SO for Items, search in Data/Dogs/Accessories: DogAccessoryDB, DogAccessorySO, AccessoryCategorySO
+	- Instantiate takes: DogAccessoryToogleItem as the prefab
 
 - Crear branch en repo de my perfect pet para integrar mi código 
 
 -------------------------------------------------------------------------------
+20251311 
+
+23:12
+2 hrs:
+- Try to integrate scripts by converting DogAccesoryDB to the formats of the old script, but is failing due to differences in the ItemCell (rafamaster3) vs x Accessory prefab (MyPerfectPet)
+
+- Pending: solve the sprite rendering component or re-write code to adapt to current game
+
+
+10:15
+
+2 hrs:
+ - Cloned my-perfect-pet repo
+ - Explored repo
+ - Listed items to integrate (List of specific SO and prefabs)
 
 20251106 01:30
 4 hrs:
